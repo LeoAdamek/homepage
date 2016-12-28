@@ -1,9 +1,78 @@
 /* Variables */
-$background: #033649;
-$shadow: #031634;
-$highlight: #E8DDCB;
+$background: #13140F;
+$text: #E4FFE6;
+$accent1: #D4FF00;
+$accent2: #00D6DD;
 
 body {
   background: $background;
-  color: $highlight;
+  color: $text;
+  font-family: "Roboto", sans-serif;
+  margin: 3em;
+}
+
+h1, h2, h3 {
+  color: $accent1;
+  font-family: "Comfortaa", cursive;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+a {
+  color: $accent2;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+input[type="search"] {
+  background: $background;
+  font-size: 2em;
+  border: none;
+  width: 80%;
+  margin: 1em;
+  border-bottom: 2px solid lighten($background, 8%);
+  color: $text;
+  font-family: "Comfortaa", cursive;
+}
+
+.panels {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+
+  .panel {
+    padding-top: 0;
+    min-width: 400px;
+    margin-top: 3em;
+
+    flex-shrink: 1;
+
+    border-radius: 0.5em;
+
+    background: lighten($background, 8%);
+    box-shadow: 0 0 2em lighten($background, 5%);
+
+    h2 {
+      margin-top: 0.1em;
+      font-size: 2.5em;
+      text-align: center;
+      width: 100%;
+      display: block;
+      border-bottom: 2px dashed lighten($background, 15%);
+    }
+
+    a {
+      font-size: 1.6em;
+    }
+
+    ul.link-list {
+      list-style: none;
+      line-height: 1.7;
+    }
+  }
 }
