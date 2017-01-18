@@ -8,7 +8,9 @@ require("css-loader");
 require("style-loader");
 
 var config = {
-  entry: './src/js/main.js',
+  entry: {
+    app: './src/js/main.js', 
+  },
 
   output: {
     path: resolve(`${__dirname}/dist`),
@@ -25,10 +27,11 @@ var config = {
   },
 
   plugins: [
-    //new Webpack.optimize.UglifyJsPlugin(),
     new Webpack.NoErrorsPlugin(),
+    new Webpack.optimize.DedupePlugin(),
     new Webpack.optimize.OccurenceOrderPlugin(),
-    new ExtractText("css/styles-[hash].bundle.css", {disable: false, allChunks: true}),
+    //new Webpack.optimize.UglifyJsPlugin(),
+    new ExtractText("css/[name]-[hash].css", {disable: false, allChunks: true}),
     new HtmlWebpackPlugin({template: './src/index.html'})
 
   ]
